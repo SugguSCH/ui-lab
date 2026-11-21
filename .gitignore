@@ -12,6 +12,7 @@ dist/
 /cypress/cypress/downloads/
 
 # Local secrets and machine settings
+/SUMMARY.md
 .env
 .env.*
 !.env.example

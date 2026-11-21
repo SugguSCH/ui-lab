@@ -83,10 +83,26 @@ Step 4.9 (optional): not performed; required tests use Chrome.
 
 3. A selected vegetarian checkbox proves the input state, not the suitability of the recommendation. An additional check could assert `vegetarian === true` on the intercepted response, alongside checking the displayed ingredients. Cypress records that response value, but this seven-step test intentionally does not assert it. A stronger independent oracle would need an authoritative ingredient-to-vegetarian mapping, because a wrong server classification could otherwise go undetected.
 
-4. Robot explicitly waits for the heading, Knife option, recommendation, login response and admin list; Cypress retries queries/assertions and waits for its aliased pizza request. The Robot scenario uses reusable business keywords, while Cypress expresses the browser actions and network/UI comparisons directly in JavaScript. Robot's HTML log groups actions under readable names and embeds its four scenario pictures. Cypress videos include the command log and page, making the flow easy to inspect, although this environment first required a browser compatibility repair.
+4. Robot explicitly waits for the heading, Knife option, recommendation, login response and admin list; Cypress retries queries/assertions and waits for its aliased pizza request. For authoring effort, this Cypress implementation puts the scenario directly in one spec, while Robot requires the scenario file plus reusable keyword definitions before the full flow is assembled. Authoring time was not measured separately, so I cannot honestly report minutes or claim a measured speed advantage for either tool. Robot's HTML log groups actions under readable names and embeds four scenario pictures, including the matching admin row for `Lab Pizza 20261121-184446`. Cypress videos show the command log and page together, making the sequence easy to inspect, while its console recorded complete suite durations of 12 and 11 seconds. The observed `* is not a valid URL` compatibility failure also added setup effort to Cypress before both specs could run together.
 
 5. For Project 2, I would choose Cypress based on this lab. The intercept check verifies that the request carries the 600-calorie limit and that the page displays the response's tool and calories. Its generated videos and command log also make the customer-to-admin flow easy to review. I would keep its working version pinned because Chrome 158 needed the compatibility fix before both specs could run together.
 
 6. For Part 3, a changed calories locator is repaired in `${MAX CALORIES}` inside `robot/resources/quickpizza.resource`. Both visibility checks and fill/value checks refer to that variable. `pizza_scenario.robot` calls `Fill In The Pizza Request` rather than embedding the locator, so it needs no locator change. The resource file therefore confines page structure details to one place and keeps the test readable.
 
 7. For Part 4, all seven steps belong in one test so the pizza name, captured tool and browser cookies survive until the admin check. Cypress clears browser state between tests, including the cookie that can pin QuickPizza to one backend. Splitting steps 6–7 into another test could reach a different backend and would also lose the first test's aliases and local data. The final spec keeps both roles in one `it` block.
+
+## Verification against the original PDF
+
+Reviewed against the original 71-page `W11-UI_Lab_Exercise_v2.pdf`, revision 4 November 2026, rather than assuming the extracted Markdown alone was sufficient.
+
+| PDF requirement | Evidence / status |
+| --- | --- |
+| Page 1: choose two tools, plus Part 0, Part B and deliverables | Robot and Cypress selected; Part 0 limitation remains as recorded above |
+| Pages 40–52: Robot web-form tests, QP-01, resource keywords, deliberate title failure, two passing runs | Required source files and recorded reports/screenshots are present |
+| Pages 53–65: Cypress web form, QP-01, intercept comparisons, custom login, deliberate title failure, two full runs with videos/screenshots | Required source files and recorded media are present; the documented compatibility update was necessary |
+| Page 66: seven reflection answers, 3–6 sentences each | Answers present; question 4 explicitly distinguishes authoring effort from unmeasured authoring time |
+| Pages 67–68: README, RESULTS, dependency files and selected tool folders with evidence pushed | Required files are tracked; dependencies and the personal local summary are excluded |
+| Pages 5–6: run QP-01 by hand in Chrome and record actual results | **Still requires the student's manual Chrome run**; the assisted in-app-browser attempt is recorded separately |
+| Page 67: submit repository link on MyCourses | **Not yet submitted** |
+
+The repository contains the final implementations and their actual runs, rather than a saved version of every intermediate exercise. The guided Cypress setup wizard (Step 4.2) was replaced by creating the configuration/support files directly. The manual Chrome DevTools Network inspection in Step 4.6 was not separately completed; the test observes the real request with `cy.intercept` and records its response instead. These functional alternatives do not establish that every guided GUI action or every incremental practice run was performed. ChromeDriver was downloaded directly and used via `CHROMEDRIVER` set for the execution sessions; the README documents setting it again in a new terminal rather than claiming a persistent Windows setting was configured.
