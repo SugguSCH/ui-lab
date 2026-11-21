@@ -11,7 +11,7 @@ Selected tools: **Part 3: Robot Framework** and **Part 4: Cypress**.
 
 ## Running the tests
 
-The tests automate QP-01's seven steps in one browser, use condition-based waits, and create a timestamped `Lab Pizza` name. They never clear shared ratings. See `RESULTS.md` for actual run results and the explicitly labelled Part 0 walkthrough limitation.
+The tests automate QP-01's seven steps in one browser, use condition-based waits, and create a timestamped `Lab Pizza` name. They never clear shared ratings. See `RESULTS.md` for actual automated results and the student's successful manual Chrome run.
 
 Prerequisites: Chrome, Python 3.10+, Node.js 22/24/26, and a matching ChromeDriver downloaded from [Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/), stored outside this repository. Set the actual driver path in each PowerShell terminal, for example:
 
@@ -55,6 +55,6 @@ The worksheet's Cypress 16.2.1 passed QP-01 but stopped before its second spec o
 
 ## Part 0 and submission
 
-`RESULTS.md` labels the assisted in-app-browser walkthrough honestly: its admin-row check failed after a delay, and it is not the student's manual Chrome run. Complete/confirm the manual Chrome run before submitting. The automated Chrome runs independently verify the full customer-to-admin scenario.
+The student completed Part 0.5 manually in Chrome Incognito: all seven steps passed for `Lab Pizza 20261121-200308`, with Pizza cutter and 500 calories per slice. The supplied recommendation/admin screenshots are stored in `evidence/manual/`, and `RESULTS.md` distinguishes the reported observations from screenshot evidence. Its PDF verification section records the remaining guided GUI activities and MyCourses submission status.
 
 Only the public demo credentials `admin/admin` from the worksheet are in the tests. Never substitute private account passwords. Submit [the public repository link](https://github.com/SugguSCH/ui-lab) on MyCourses before its posted deadline.

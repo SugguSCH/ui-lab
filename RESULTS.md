@@ -2,7 +2,7 @@
 
 Tool parts that I chose: **Part 3: Robot Framework** and **Part 4: Cypress**.
 
-Execution date: **21 November 2026**, Asia/Bangkok (UTC+7). Automated results below were collected from real Chrome runs. The Part 0 walkthrough is explicitly agent-assisted rather than a student's manual run.
+Execution date: **21 November 2026**, Asia/Bangkok (UTC+7). Automated results below were collected from real Chrome runs. The Part 0.5 run was subsequently performed manually by the student in Chrome Incognito, with reported observations and supplied screenshots.
 
 ## Part 0
 
@@ -15,23 +15,25 @@ Execution date: **21 November 2026**, Asia/Bangkok (UTC+7). Automated results be
 - Inspection confirmed **three** inputs sharing `id="floating_filled"`. The recommendation heading also uses `id="pizza-name"`, so the tag qualifier on the name input is necessary.
 - Calories locator in Robot: `//label[normalize-space()='Max Calories per Slice']/preceding-sibling::input`; Cypress uses the same label's sibling input.
 
-### Step 0.5 — assisted walkthrough, with limitations
+### Step 0.5 — manual Chrome run
 
-The browser-control connection exposed the **in-app browser**, not installed Chrome. These actions were performed individually through page controls. This does **not** claim to fulfil the student's required manual Chrome run; a manual Chrome confirmation is still needed.
+The student performed QP-01 manually in **Google Chrome Incognito** following the seven steps, and supplied screenshots of the recommendation and the matching admin list. The initial heading and the login-required message were confirmed in the conversation; those two observations are user-reported rather than separately captured in screenshots.
 
-Test ID: **QP-01**. Title: **A custom pizza reaches the admin list**. Objective: verify request restrictions, rejection of anonymous ratings, and the admin's view of the pizza. Preconditions: QuickPizza reachable and no customer login. Data: name `Lab Pizza 20261121-184125`, limit `600`, excluded tool `Knife`, vegetarian selected, public demo admin `admin/admin`.
+Test ID: **QP-01**. Title: **A custom pizza reaches the admin list**. Objective: verify request restrictions, rejection of anonymous ratings, and the admin's view of the pizza. Preconditions: QuickPizza reachable and no customer login. Data: name `Lab Pizza 20261121-200308`, limit `600`, excluded tool `Knife`, vegetarian selected, public demo admin `admin/admin`.
 
 | Step | Action / expected result | Actual result | Pass or fail |
 | --- | --- | --- | --- |
-| 1 | Open home; expected heading appears | `Looking to break out of your pizza routine?` appeared | Pass |
-| 2 | Enable Advanced; four fields appear | Calories, excluded tools, vegetarian checkbox and name were available | Pass |
-| 3 | Enter restrictions/name; values are retained | `600`, Knife selected, vegetarian checked, exact name displayed | Pass |
-| 4 | Request pizza; same name, non-Knife tool, calories ≤600 | `Lab Pizza 20261121-184125`, **Pizza cutter**, **350** calories per slice | Pass |
-| 5 | Click Love it! without login; login message appears | `Please log in first.` appeared | Pass |
-| 6 | Sign in at `/admin`; admin heading appears | `Latest pizza recommendations` appeared | Pass |
-| 7 | Find the pizza; tool matches step 4 | Recent list did not contain this name, including after one Refresh | **Fail** |
+| 1 | Open home; expected heading appears | Student confirmed the expected heading and Login link in a fresh Chrome Incognito window | Pass |
+| 2 | Enable Advanced; four fields appear | The supplied screenshot shows calories, excluded tools, vegetarian and custom name fields | Pass |
+| 3 | Enter restrictions/name; values are retained | Screenshot shows `600`, Knife selected, vegetarian checked and `Lab Pizza 20261121-200308` | Pass |
+| 4 | Request pizza; same name, non-Knife tool, calories ≤600 | Screenshot shows `Lab Pizza 20261121-200308`, **Pizza cutter**, **500** calories per slice | Pass |
+| 5 | Click Love it! without login; login message appears | Student confirmed `Please log in first.` appeared before admin login | Pass |
+| 6 | Sign in at `/admin`; admin heading appears | Chrome Incognito screenshot shows `Latest pizza recommendations` and Logout | Pass |
+| 7 | Find the pizza; tool matches step 4 | Screenshot shows `Lab Pizza 20261121-200308 (tool=Pizza cutter, ingredients_number=7)`, matching step 4 | Pass |
 
-Several minutes elapsed during tool setup between the request and admin check. The shared admin page showed a changing list of 15 recent pizzas. Limited recent history or server affinity could explain the missing name; this observation does not distinguish them. No successful manual result is fabricated. The later automated Chrome runs completed the scenario in seconds and verified their exact pizza names/tools.
+Manual result: **PASS, 7/7 steps**. Evidence: [recommendation and input values](evidence/manual/qp01-step4-recommendation.png), [Chrome Incognito admin list with matching pizza/tool](evidence/manual/qp01-step7-admin-list.png). The pizza was below other users' recommendations, demonstrating why the test searches by its unique name instead of checking only the newest row.
+
+An earlier agent-assisted attempt in the in-app browser used `Lab Pizza 20261121-184125` (Pizza cutter, 350 calories) and failed to find that name in the admin list after a delay. That was a separate unsuccessful attempt; it is not the successful manual Chrome run recorded in the table above.
 
 ## Part 3: Robot Framework
 
@@ -97,12 +99,12 @@ Reviewed against the original 71-page `W11-UI_Lab_Exercise_v2.pdf`, revision 4 N
 
 | PDF requirement | Evidence / status |
 | --- | --- |
-| Page 1: choose two tools, plus Part 0, Part B and deliverables | Robot and Cypress selected; Part 0 limitation remains as recorded above |
+| Page 1: choose two tools, plus Part 0, Part B and deliverables | Robot and Cypress selected; Part 0.5 manual Chrome run now recorded above |
 | Pages 40–52: Robot web-form tests, QP-01, resource keywords, deliberate title failure, two passing runs | Required source files and recorded reports/screenshots are present |
 | Pages 53–65: Cypress web form, QP-01, intercept comparisons, custom login, deliberate title failure, two full runs with videos/screenshots | Required source files and recorded media are present; the documented compatibility update was necessary |
 | Page 66: seven reflection answers, 3–6 sentences each | Answers present; question 4 explicitly distinguishes authoring effort from unmeasured authoring time |
 | Pages 67–68: README, RESULTS, dependency files and selected tool folders with evidence pushed | Required files are tracked; dependencies and the personal local summary are excluded |
-| Pages 5–6: run QP-01 by hand in Chrome and record actual results | **Still requires the student's manual Chrome run**; the assisted in-app-browser attempt is recorded separately |
+| Pages 5–6: run QP-01 by hand in Chrome and record actual results | **PASS, 7/7** in the student's manual Chrome run, with reported observations and screenshots |
 | Page 67: submit repository link on MyCourses | **Not yet submitted** |
 
 The repository contains the final implementations and their actual runs, rather than a saved version of every intermediate exercise. The guided Cypress setup wizard (Step 4.2) was replaced by creating the configuration/support files directly. The manual Chrome DevTools Network inspection in Step 4.6 was not separately completed; the test observes the real request with `cy.intercept` and records its response instead. These functional alternatives do not establish that every guided GUI action or every incremental practice run was performed. ChromeDriver was downloaded directly and used via `CHROMEDRIVER` set for the execution sessions; the README documents setting it again in a new terminal rather than claiming a persistent Windows setting was configured.
