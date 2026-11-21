@@ -1,0 +1,15 @@
+{
+  "source": "Student Chrome DevTools Headers and Payload screenshots, 21 November 2026",
+  "url": "https://quickpizza.grafana.com/api/pizza",
+  "method": "POST",
+  "statusCode": 200,
+  "payload": {
+    "customName": "Lab Pizza 20261121-201146",
+    "excludedIngredients": [],
+    "excludedTools": ["Knife"],
+    "maxCaloriesPerSlice": 600,
+    "maxNumberOfToppings": 5,
+    "minNumberOfToppings": 2,
+    "mustBeVegetarian": true
+  }
+}

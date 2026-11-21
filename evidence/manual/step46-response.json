@@ -1,0 +1,22 @@
+{
+  "pizza": {
+    "id": 22797,
+    "name": "Lab Pizza 20261121-201146",
+    "dough": {
+      "ID": 3,
+      "name": "Stuffed",
+      "caloriesPerSlice": 300
+    },
+    "ingredients": [
+      { "ID": 29, "name": "Kalamata olives", "caloriesPerSlice": 50, "vegetarian": true },
+      { "ID": 2, "name": "Olive oil", "caloriesPerSlice": 100, "vegetarian": true },
+      { "ID": 4, "name": "Bianco di Nizza tomatoes", "caloriesPerSlice": 50, "vegetarian": true },
+      { "ID": 7, "name": "Mozzarella di bufala", "caloriesPerSlice": 150, "vegetarian": true },
+      { "ID": 19, "name": "Garlic", "caloriesPerSlice": 25, "vegetarian": true },
+      { "ID": 15, "name": "Black olives", "caloriesPerSlice": 50, "vegetarian": true }
+    ],
+    "tool": "Pizza cutter"
+  },
+  "calories": 425,
+  "vegetarian": true
+}

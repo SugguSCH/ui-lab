@@ -55,6 +55,6 @@ The worksheet's Cypress 16.2.1 passed QP-01 but stopped before its second spec o
 
 ## Part 0 and submission
 
-The student completed Part 0.5 manually in Chrome Incognito: all seven steps passed for `Lab Pizza 20261121-200308`, with Pizza cutter and 500 calories per slice. The supplied recommendation/admin screenshots are stored in `evidence/manual/`, and `RESULTS.md` distinguishes the reported observations from screenshot evidence. Its PDF verification section records the remaining guided GUI activities and MyCourses submission status.
+The student completed Part 0.5 manually in Chrome Incognito: all seven steps passed for `Lab Pizza 20261121-200308`, with Pizza cutter and 500 calories per slice. The student also opened the existing Cypress E2E project, ran the web-form spec successfully through its GUI, and inspected a separate QuickPizza request through Chrome DevTools. Screenshots and the supplied request/response data are stored in `evidence/manual/`; `RESULTS.md` distinguishes these activities and their evidence from the automated runs. MyCourses submission is still pending.
 
 Only the public demo credentials `admin/admin` from the worksheet are in the tests. Never substitute private account passwords. Submit [the public repository link](https://github.com/SugguSCH/ui-lab) on MyCourses before its posted deadline.
