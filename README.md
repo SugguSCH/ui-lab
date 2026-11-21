@@ -4,6 +4,8 @@ Individual Automated UI Testing lab for ITDS362.
 
 Selected tools: **Part 3: Robot Framework** and **Part 4: Cypress**.
 
+For a Thai overview of completed work, evidence and remaining submission steps, see [SUMMARY.md](SUMMARY.md).
+
 ## Folders
 
 - `robot/`: Robot Framework tests, reusable keywords in `resources/`, and evidence in `results/run1/` and `results/run2/`.
