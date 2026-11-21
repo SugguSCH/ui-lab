@@ -1,0 +1,79 @@
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        16.2.1                                                                         │
+  │ Browser:        Chrome 158 (headless)                                                          │
+  │ Node Version:   v26.5.0 (C:\Program Files\nodejs\node.exe)                                     │
+  │ Specs:          1 found (web-form.cy.js)                                                       │
+  │ Searched:       D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\cypress\e2e\web-form.cy.js      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  web-form.cy.js                                                                  (1 of 1)
+
+
+  Selenium web form
+    1) fills in the form and verifies the submitted page
+
+
+  0 passing (12s)
+  1 failing
+
+  1) Selenium web form
+       fills in the form and verifies the submitted page:
+
+      Timed out retrying after 10000ms
+      + expected - actual
+
+      -'Web form'
+      +'Web Form'
+      
+      at Context.eval (webpack://ui-lab-cypress/./cypress/e2e/web-form.cy.js:5:15)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     11 seconds                                                                       │
+  │ Spec Ran:     web-form.cy.js                                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\evidence\intentional-failure\scre     (1256x621)
+     enshots\web-form.cy.js\Selenium web form -- fills in the form and verifies the s               
+     ubmitted page (failed).png                                                                     
+
+
+  (Video)
+
+  -  Video output: D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\evidence\intentional-failure\videos\web-form.cy.js.mp4
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ×  web-form.cy.js                           00:11        1        -        1        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ×  1 of 1 failed (100%)                     00:11        1        -        1        -        -  
+

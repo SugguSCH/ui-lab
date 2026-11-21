@@ -1,0 +1,81 @@
+
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        16.2.1                                                                         │
+  │ Browser:        Chrome 158 (headless)                                                          │
+  │ Node Version:   v26.5.0 (C:\Program Files\nodejs\node.exe)                                     │
+  │ Specs:          2 found (pizza-scenario.cy.js, web-form.cy.js)                                 │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  pizza-scenario.cy.js                                                            (1 of 2)
+
+
+  QP-01 A custom pizza reaches the admin list
+    √ follows all seven steps of QP-01 (6536ms)
+
+
+  1 passing (9s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     pizza-scenario.cy.js                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\cypress\screenshots\pizza-scenari    (1256x1197)
+     o.cy.js\qp01-step4-recommendation.png                                                          
+  -  D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\cypress\screenshots\pizza-scenari    (1256x1225)
+     o.cy.js\qp01-step5-login-needed.png                                                            
+  -  D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\cypress\screenshots\pizza-scenari     (1256x661)
+     o.cy.js\qp01-step7-admin-list.png                                                              
+
+
+  (Video)
+
+  -  Video output: D:\DST\year 3\Term 1\QA\week 11\ui-lab\cypress\cypress\videos\pizza-scenario.cy.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  web-form.cy.js                                                                  (2 of 2)
+* is not a valid URL
+Error: * is not a valid URL
+    at <embedded>:616:604067
+    at b._handleMessage (<embedded>:616:606400)
+    at q.<anonymous> (<embedded>:616:606039)
+    at q.emit (node:events:509:28)
+    at j.U (<embedded>:616:591217)
+    at j.emit (node:events:509:28)
+    at j.dataMessage (<embedded>:616:570899)
+    at j.getData (<embedded>:616:570081)
+    at j.startLoop (<embedded>:616:566801)
+    at j._write (<embedded>:616:566156)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at Socket.W (<embedded>:616:591903)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)

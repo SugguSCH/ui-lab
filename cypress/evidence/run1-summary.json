@@ -1,0 +1,39 @@
+{
+  "cypressVersion": "16.3.0",
+  "browserVersion": "158.0.8127.36",
+  "totalTests": 2,
+  "totalPassed": 2,
+  "totalFailed": 0,
+  "totalDuration": 12000,
+  "startedTestsAt": "2026-11-21T11:47:20.815Z",
+  "runs": [
+    {
+      "spec": "cypress\\e2e\\pizza-scenario.cy.js",
+      "stats": {
+        "duration": 9593,
+        "endedAt": "2026-11-21T11:47:30.408Z",
+        "failures": 0,
+        "passes": 1,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-11-21T11:47:20.815Z",
+        "suites": 1,
+        "tests": 1
+      }
+    },
+    {
+      "spec": "cypress\\e2e\\web-form.cy.js",
+      "stats": {
+        "duration": 2407,
+        "endedAt": "2026-11-21T11:47:34.959Z",
+        "failures": 0,
+        "passes": 1,
+        "pending": 0,
+        "skipped": 0,
+        "startedAt": "2026-11-21T11:47:32.552Z",
+        "suites": 1,
+        "tests": 1
+      }
+    }
+  ]
+}
